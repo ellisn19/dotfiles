@@ -1,6 +1,6 @@
 # dotfiles
 # 🛠️ How to Use This AutoHotkey Script
-📄 [Download the `.ahk` script here](autohotkey/mac-style-nav.ahk)
+📄 [Download the `mac-style-nav.ahk` script here](autohotkey/mac-style-nav.ahk)
 
 1. **Install [AutoHotkey](https://www.autohotkey.com/)**
    Download and install AutoHotkey **v1.1** (this script uses v1 syntax).
