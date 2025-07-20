@@ -1,0 +1,22 @@
+{
+	"Log": {
+		"prefix": "console.log",
+		"body": ["console.log($1);"],
+		"description": "Log"
+	},
+	"Log text": {
+		"prefix": "console.log",
+		"body": ["console.log('$1');"],
+		"description": "Log text"
+	},
+	"Log variable with label": {
+		"prefix": "console.log",
+		"body": ["console.log('$1: ' + $1);"],
+		"description": "Log a variable with it's name and value"
+	},
+	"Log variable with JSON.stringify": {
+		"prefix": "console.log",
+		"body": ["console.log('$1: ' + JSON.stringify($1));"],
+		"description": "Log a variable with it's name and value using JSON.stringify"
+	}
+}
