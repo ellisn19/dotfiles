@@ -1,0 +1,22 @@
+{
+    "workbench.colorTheme": "Visual Studio Dark",
+    "editor.minimap.enabled": false,
+    "workbench.editor.wrapTabs": true,
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "editor.formatOnSave": true,
+    "prettier.useTabs": true,
+    "prettier.singleQuote": true,
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "workbench.iconTheme": "file-icons",
+    "files.autoSave": "afterDelay",
+    "editor.renderWhitespace": "all",
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
+}
