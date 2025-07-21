@@ -13,6 +13,7 @@ LAlt & s::Send ^s        ; Save
 LAlt & f::Send ^f        ; Find
 LAlt & t::Send ^t        ; New tab
 LAlt & w::Send ^w        ; Close tab
+LAlt & r::Send ^r        ; Reload page (e.g., in browser)
 
 ; --- Make LAlt + Left Click open links in new tab ---
 ~LAlt & LButton::Send ^{Click}
