@@ -6,7 +6,7 @@ LCtrl::LAlt
 ; Map LCtrl + common keys to Ctrl equivalents
 LAlt & c::Send ^c        ; Copy
 LAlt & v::Send ^v        ; Paste
-+LAlt & v::Send ^+v      ; Paste without formatting
+LAlt & v::Send ^+v       ; Paste without formatting
 LAlt & x::Send ^x        ; Cut
 LAlt & z::Send ^z        ; Undo
 LAlt & a::Send ^a        ; Select All
