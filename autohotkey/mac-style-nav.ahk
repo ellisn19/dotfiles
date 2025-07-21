@@ -14,6 +14,9 @@ LAlt & f::Send ^f        ; Find
 LAlt & t::Send ^t        ; New tab
 LAlt & w::Send ^w        ; Close tab
 
+; --- Make LAlt + Left Click open links in new tab ---
+~LAlt & LButton::Send ^{Click}
+
 ; --- macOS-style cursor movement using physical Left Ctrl (now mapped to Alt) ---
 
 ; Move to beginning/end of line
