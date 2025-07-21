@@ -10,6 +10,7 @@ LAlt & z::Send ^z        ; Undo
 LAlt & a::Send ^a        ; Select All
 LAlt & s::Send ^s        ; Save
 LAlt & f::Send ^f        ; Find
+LAlt & l::Send ^l        ;
 LAlt & t::Send ^t        ; New tab
 LAlt & w::Send ^w        ; Close tab
 LAlt & r::Send ^r        ; Reload page (e.g., in browser)
