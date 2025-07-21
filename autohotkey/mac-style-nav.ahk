@@ -5,8 +5,7 @@ LCtrl::LAlt
 
 ; Map LCtrl + common keys to Ctrl equivalents
 LAlt & c::Send ^c        ; Copy
-LAlt & v::Send ^v        ; Paste
-LAlt & v::Send ^+v       ; Paste without formatting
+
 LAlt & x::Send ^x        ; Cut
 LAlt & z::Send ^z        ; Undo
 LAlt & a::Send ^a        ; Select All
@@ -15,6 +14,15 @@ LAlt & f::Send ^f        ; Find
 LAlt & t::Send ^t        ; New tab
 LAlt & w::Send ^w        ; Close tab
 LAlt & r::Send ^r        ; Reload page (e.g., in browser)
+LAlt & /::Send ^/        ; Comment out code line
+
+; Paste with/without formatting
+LAlt & v::
+    if GetKeyState("Shift", "P")
+        Send ^+v  ; Paste without formatting
+    else
+        Send ^v   ; Normal paste
+return
 
 ; --- Make LAlt + Left Click open links in new tab ---
 ~LAlt & LButton::Send ^{Click}
