@@ -5,7 +5,6 @@ LCtrl::LAlt
 
 ; Map LCtrl + common keys to Ctrl equivalents
 LAlt & c::Send ^c        ; Copy
-
 LAlt & x::Send ^x        ; Cut
 LAlt & z::Send ^z        ; Undo
 LAlt & a::Send ^a        ; Select All
