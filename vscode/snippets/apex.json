@@ -1,0 +1,71 @@
+{
+	"Apex Log - Debug": {
+		"prefix": "System.debug",
+		"body": ["System.debug('NWE: $1');"],
+		"description": "Basic debug log with NWE prefix"
+	},
+	"Apex Log - List/Map": {
+		"prefix": "System.debug",
+		"body": ["System.debug('NWE: ' + JSON.serializePretty($1));"],
+		"description": "Log list/map contents prettily"
+	},
+	"Apex Class": {
+		"prefix": "apexclass",
+		"body": ["public class ${1:ClassName} {", "  ${2:// class body}", "}"],
+		"description": "Apex class declaration"
+	},
+	"Apex Trigger": {
+		"prefix": "trigger",
+		"body": [
+			"trigger ${1:TriggerName} on ${2:ObjectName} (${3:before|after} ${4:insert|update|delete}) {",
+			"  ${5:// trigger logic}",
+			"}"
+		],
+		"description": "Apex trigger skeleton"
+	},
+	"SOQL Query": {
+		"prefix": "soql",
+		"body": [
+			"List<${1:sObject}> ${2:records} = [SELECT ${3:Fields} FROM ${1:sObject} WHERE ${4:conditions}];"
+		],
+		"description": "Basic SOQL query"
+	},
+	"DML Operation": {
+		"prefix": "dml",
+		"body": [
+			"try {",
+			"  ${1:insert|update|delete|undelete} ${2:records};",
+			"} catch (DmlException e) {",
+			"  System.debug('Error: ' + e.getMessage());",
+			"}"
+		],
+		"description": "DML operation (insert, update, delete, undelete) with exception handling"
+	},
+	"Test Method": {
+		"prefix": "testmethod",
+		"body": [
+			"@isTest",
+			"private static void ${1:testMethodName}() {",
+			"  ${2:// test code}",
+			"}"
+		],
+		"description": "Apex test method skeleton"
+	},
+	"Batch Apex": {
+		"prefix": "batch",
+		"body": [
+			"global class ${1:BatchClass} implements Database.Batchable<${2:sObject}> {",
+			"  global Database.QueryLocator start(Database.BatchableContext bc) {",
+			"    return Database.getQueryLocator('${3:SOQL query}');",
+			"  }",
+			"  global void execute(Database.BatchableContext bc, List<${2:sObject}> scope) {",
+			"    ${4:// batch logic}",
+			"  }",
+			"  global void finish(Database.BatchableContext bc) {",
+			"    ${5:// finish logic}",
+			"  }",
+			"}"
+		],
+		"description": "Batch Apex class skeleton"
+	}
+}
