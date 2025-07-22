@@ -1,0 +1,79 @@
+{
+	"Apex Class Metadata": {
+		"prefix": "meta:class",
+		"body": [
+			"<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+			"<ApexClass xmlns=\"http://soap.sforce.com/2006/04/metadata\">",
+			"  <apiVersion>${1:57.0}</apiVersion>",
+			"  <status>${2:Active}</status>",
+			"</ApexClass>"
+		],
+		"description": "Basic Apex Class metadata file"
+	},
+	"Apex Trigger Metadata": {
+		"prefix": "meta:trigger",
+		"body": [
+			"<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+			"<ApexTrigger xmlns=\"http://soap.sforce.com/2006/04/metadata\">",
+			"  <apiVersion>${1:57.0}</apiVersion>",
+			"  <status>${2:Active}</status>",
+			"</ApexTrigger>"
+		],
+		"description": "Basic Apex Trigger metadata file"
+	},
+	"LWC Metadata": {
+		"prefix": "meta:lwc",
+		"body": [
+			"<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+			"<LightningComponentBundle xmlns=\"http://soap.sforce.com/2006/04/metadata\">",
+			"  <apiVersion>${1:57.0}</apiVersion>",
+			"  <isExposed>${2:true}</isExposed>",
+			"  <targets>",
+			"    <target>lightning__RecordPage</target>",
+			"    <target>lightning__AppPage</target>",
+			"    <target>lightning__HomePage</target>",
+			"  </targets>",
+			"</LightningComponentBundle>"
+		],
+		"description": "Basic Lightning Web Component metadata file"
+	},
+	"Aura Component Bundle Metadata": {
+		"prefix": "meta:aura",
+		"body": [
+			"<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+			"<AuraDefinitionBundle xmlns=\"http://soap.sforce.com/2006/04/metadata\">",
+			"  <apiVersion>${1:57.0}</apiVersion>",
+			"</AuraDefinitionBundle>"
+		],
+		"description": "Basic Aura Component Bundle metadata file"
+	},
+	"Custom Object XML": {
+		"prefix": "customobject",
+		"body": [
+			"<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+			"<CustomObject xmlns=\"http://soap.sforce.com/2006/04/metadata\">",
+			"  <label>${1:ObjectLabel}</label>",
+			"  <pluralLabel>${2:ObjectPluralLabel}</pluralLabel>",
+			"  <nameField>",
+			"    <type>${3:Text}</type>",
+			"    <label>${4:Name}</label>",
+			"  </nameField>",
+			"  <deploymentStatus>${5:Deployed}</deploymentStatus>",
+			"  <sharingModel>${6:ReadWrite}</sharingModel>",
+			"</CustomObject>"
+		],
+		"description": "Custom object metadata skeleton"
+	},
+	"Profile XML Skeleton": {
+		"prefix": "profilexml",
+		"body": [
+			"<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+			"<Profile xmlns=\"http://soap.sforce.com/2006/04/metadata\">",
+			"  <userLicense>${1:Salesforce}</userLicense>",
+			"  <custom></custom>",
+			"  ${2:// Add profile permissions here}",
+			"</Profile>"
+		],
+		"description": "Profile metadata skeleton"
+	}
+}
