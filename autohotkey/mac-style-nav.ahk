@@ -10,11 +10,12 @@ LAlt & z::Send ^z        ; Undo
 LAlt & a::Send ^a        ; Select All
 LAlt & s::Send ^s        ; Save
 LAlt & f::Send ^f        ; Find
-LAlt & l::Send ^l        ;
+LAlt & l::Send ^l        ; Url Bar
 LAlt & t::Send ^t        ; New tab
 LAlt & w::Send ^w        ; Close tab
 LAlt & r::Send ^r        ; Reload page (e.g., in browser)
 LAlt & /::Send ^/        ; Comment out code line
+LAlt & n::Send ^/        ; New File
 
 ; Paste with/without formatting
 LAlt & v::
