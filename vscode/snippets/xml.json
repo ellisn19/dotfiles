@@ -48,7 +48,7 @@
 		"description": "Basic Aura Component Bundle metadata file"
 	},
 	"Custom Object XML": {
-		"prefix": "customobject",
+		"prefix": "meta:customobject",
 		"body": [
 			"<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
 			"<CustomObject xmlns=\"http://soap.sforce.com/2006/04/metadata\">",
@@ -64,8 +64,58 @@
 		],
 		"description": "Custom object metadata skeleton"
 	},
+	"Custom Field XML (with inline comments for field types)": {
+		"prefix": "meta:customfield",
+		"body": [
+			"<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+			"<CustomField xmlns=\"http://soap.sforce.com/2006/04/metadata\">",
+			"  <fullName>${1:ObjectApiName}.${2:FieldApiName}__c</fullName>",
+			"  <label>${3:Field Label}</label>",
+			"  <type>${4|AutoNumber,Checkbox,Currency,Date,DateTime,Email,EncryptedText,Formula,Number,Percent,Phone,Picklist,MultiselectPicklist,Text,TextArea,LongTextArea,Html,Time,Url|}</type>",
+			"  <!-- <length>${5:255}</length> --> <!-- Text, TextArea, LongTextArea, Number, Currency, Percent, Email, Phone, Url, Time -->",
+			"  <!-- <precision>${6:18}</precision> --> <!-- Number, Currency, Percent -->",
+			"  <!-- <scale>${7:0}</scale> --> <!-- Number, Currency, Percent -->",
+			"  <!-- <required>${8:false}</required> --> <!-- Most field types -->",
+			"  <!-- <unique>${9:false}</unique> --> <!-- Most field types -->",
+			"  <!-- <externalId>${10:false}</externalId> --> <!-- Most field types -->",
+			"  <!-- <defaultValue>${11:null}</defaultValue> --> <!-- Most field types -->",
+			"  <!-- <description>${12:}</description> --> <!-- All field types -->",
+			"  <!-- <inlineHelpText>${13:}</inlineHelpText> --> <!-- All field types -->",
+			"  <!-- <formula>${14:}</formula> --> <!-- Formula fields only -->",
+			"  <!-- <formulaTreatBlanksAs>${15>BlankAsBlank|BlankAsZero}</formulaTreatBlanksAs> --> <!-- Formula fields only -->",
+			"  <!-- <displayFormat>${16:}</displayFormat> --> <!-- AutoNumber -->",
+			"  <!-- <picklistValues> --> <!-- Picklist, MultiselectPicklist -->",
+			"  <!--   <fullName>${17:Value1}</fullName> -->",
+			"  <!--   <default>${18:false}</default> -->",
+			"  <!-- </picklistValues> -->",
+			"  <!-- <trackHistory>${19:false}</trackHistory> --> <!-- History-tracked fields -->",
+			"  <!-- <trackTrending>${20:false}</trackTrending> --> <!-- History-tracked fields -->",
+			"  <!-- <referenceTo>${21:}</referenceTo> --> <!-- Lookup or Master-Detail relationships -->",
+			"  <!-- <relationshipLabel>${22:}</relationshipLabel> --> <!-- Lookup or Master-Detail relationships -->",
+			"  <!-- <relationshipName>${23:}</relationshipName> --> <!-- Lookup or Master-Detail relationships -->",
+			"  <!-- <relationshipOrder>${24:0}</relationshipOrder> --> <!-- Lookup or Master-Detail relationships -->",
+			"  <!-- <writeRequiresMasterRead>${25:false}</writeRequiresMasterRead> --> <!-- Lookup or Master-Detail relationships -->",
+			"</CustomField>"
+		],
+		"description": "Custom field metadata skeleton with inline comments showing applicable field types"
+	},
+	"Custom Label XML": {
+		"prefix": "meta:customlabel",
+		"body": [
+			"<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+			"<CustomLabel xmlns=\"http://soap.sforce.com/2006/04/metadata\">",
+			"  <fullName>${1:LabelName}</fullName>",
+			"  <categories>${2:Default}</categories> <!-- Optional, comma-separated categories -->",
+			"  <language>${3:en_US}</language>",
+			"  <protected>${4:false}</protected>",
+			"  <shortDescription>${5:Short description here}</shortDescription>",
+			"  <value>${6:Label value here}</value>",
+			"</CustomLabel>"
+		],
+		"description": "Custom Label metadata skeleton"
+	},
 	"Profile XML Skeleton": {
-		"prefix": "profilexml",
+		"prefix": "meta:profile",
 		"body": [
 			"<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
 			"<Profile xmlns=\"http://soap.sforce.com/2006/04/metadata\">",
@@ -75,5 +125,75 @@
 			"</Profile>"
 		],
 		"description": "Profile metadata skeleton"
+	},
+	"Permission Set XML": {
+		"prefix": "meta:permissionset",
+		"body": [
+			"<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+			"<PermissionSet xmlns=\"http://soap.sforce.com/2006/04/metadata\">",
+			"  <label>${1:My Permission Set}</label>",
+			"  <!-- Add permission nodes like objectPermissions, fieldPermissions, etc. -->",
+			"</PermissionSet>"
+		],
+		"description": "Permission Set metadata skeleton"
+	},
+	"Custom Tab XML": {
+		"prefix": "meta:tab",
+		"body": [
+			"<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+			"<CustomTab xmlns=\"http://soap.sforce.com/2006/04/metadata\">",
+			"  <label>${1:My Custom Tab}</label>",
+			"  <sobjectName>${2:MyObject__c}</sobjectName>",
+			"  <motif>${3:Custom20}</motif>",
+			"  <fullName>${4:MyCustomTab}</fullName>",
+			"</CustomTab>"
+		],
+		"description": "Custom Tab metadata skeleton"
+	},
+	"Validation Rule XML": {
+		"prefix": "meta:validation",
+		"body": [
+			"<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+			"<ValidationRule xmlns=\"http://soap.sforce.com/2006/04/metadata\">",
+			"  <fullName>${1:MyObject__c.MyValidationRule}</fullName>",
+			"  <active>${2:true}</active>",
+			"  <description>${3:Description of the rule}</description>",
+			"  <errorConditionFormula>${4:ISBLANK(Some_Field__c)}</errorConditionFormula>",
+			"  <errorMessage>${5:Field is required}</errorMessage>",
+			"</ValidationRule>"
+		],
+		"description": "Validation Rule metadata skeleton"
+	},
+	"Workflow Rule XML": {
+		"prefix": "meta:workflow",
+		"body": [
+			"<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+			"<WorkflowRule xmlns=\"http://soap.sforce.com/2006/04/metadata\">",
+			"  <fullName>${1:MyObject__c.MyWorkflowRule}</fullName>",
+			"  <active>${2:true}</active>",
+			"  <booleanFilter>${3:1 AND 2}</booleanFilter>",
+			"  <criteriaItems>",
+			"    <field>${4:My_Field__c}</field>",
+			"    <operation>equals</operation>",
+			"    <value>${5:Some Value}</value>",
+			"  </criteriaItems>",
+			"  <triggerType>${6:onCreateOnly}</triggerType>",
+			"</WorkflowRule>"
+		],
+		"description": "Workflow Rule metadata skeleton"
+	},
+	"Remote Site Setting XML": {
+		"prefix": "meta:remotesite",
+		"body": [
+			"<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+			"<RemoteSiteSetting xmlns=\"http://soap.sforce.com/2006/04/metadata\">",
+			"  <fullName>${1:MyRemoteSite}</fullName>",
+			"  <disableProtocolSecurity>${2:false}</disableProtocolSecurity>",
+			"  <isActive>${3:true}</isActive>",
+			"  <description>${4:Optional description}</description>",
+			"  <url>${5:https://example.com}</url>",
+			"</RemoteSiteSetting>"
+		],
+		"description": "Remote Site Setting metadata skeleton"
 	}
 }
