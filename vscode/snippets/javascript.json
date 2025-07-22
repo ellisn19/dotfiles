@@ -1,22 +1,47 @@
 {
 	"Log": {
 		"prefix": "console.log",
-		"body": ["console.log($1);"],
-		"description": "Log"
-	},
-	"Log text": {
-		"prefix": "console.log",
-		"body": ["console.log('$1');"],
-		"description": "Log text"
+		"body": ["console.log(${1:variable});"],
+		"description": "Log a variable"
 	},
 	"Log variable with label": {
 		"prefix": "console.log",
-		"body": ["console.log('$1: ' + $1);"],
-		"description": "Log a variable with it's name and value"
+		"body": ["console.log('${1:variable}: ' + ${1:variable});"],
+		"description": "Log a variable with its name and value"
 	},
 	"Log variable with JSON.stringify": {
 		"prefix": "console.log",
-		"body": ["console.log('$1: ' + JSON.stringify($1));"],
-		"description": "Log a variable with it's name and value using JSON.stringify"
+		"body": ["console.log('${1:variable}: ' + JSON.stringify(${1:variable}));"],
+		"description": "Log a variable with its name and value using JSON.stringify"
+	},
+	"Log object with expandable tree": {
+		"prefix": "console.dir",
+		"body": ["console.dir(${1:variable});"],
+		"description": "Log an object with expandable tree"
+	},
+	"Time a block": {
+		"prefix": "timeblock",
+		"body": [
+			"console.time('${1:label}');",
+			"${2:// code to measure}",
+			"console.timeEnd('${1:label}');"
+		],
+		"description": "Time a block of code"
+	},
+	"Arrow function": {
+		"prefix": "arrowfn",
+		"body": ["const ${1:fnName} = (${2:params}) => {", "  ${3:// body}", "};"],
+		"description": "Arrow function"
+	},
+	"Try Catch Block": {
+		"prefix": "trycatch",
+		"body": [
+			"try {",
+			"  ${1:// code to try}",
+			"} catch (${2:error}) {",
+			"  console.error('${2:error}', ${2:error});",
+			"}"
+		],
+		"description": "Try/catch block with error logging"
 	}
 }
