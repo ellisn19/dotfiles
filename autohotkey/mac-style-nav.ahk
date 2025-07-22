@@ -15,7 +15,7 @@ LAlt & t::Send ^t        ; New tab
 LAlt & w::Send ^w        ; Close tab
 LAlt & r::Send ^r        ; Reload page (e.g., in browser)
 LAlt & /::Send ^/        ; Comment out code line
-LAlt & n::Send ^/        ; New File
+LAlt & n::Send ^n        ; New File
 
 ; Paste with/without formatting
 LAlt & v::
