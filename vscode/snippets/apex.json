@@ -23,6 +23,17 @@
 		],
 		"description": "Apex trigger skeleton"
 	},
+	"Trigger Handler": {
+		"prefix": "triggerhandler",
+		"body": [
+			"public class ${1:TriggerHandler} {",
+			"  public static void handle${2:Operation}(List<${3:sObject}> records) {",
+			"    ${4:// handler logic}",
+			"  }",
+			"}"
+		],
+		"description": "Basic trigger handler class pattern"
+	},
 	"SOQL Query": {
 		"prefix": "soql",
 		"body": [
@@ -52,7 +63,7 @@
 		"description": "Apex test method skeleton"
 	},
 	"Batch Apex": {
-		"prefix": "batch",
+		"prefix": "batchapex",
 		"body": [
 			"global class ${1:BatchClass} implements Database.Batchable<${2:sObject}> {",
 			"  global Database.QueryLocator start(Database.BatchableContext bc) {",
@@ -67,5 +78,16 @@
 			"}"
 		],
 		"description": "Batch Apex class skeleton"
+	},
+	"Queueable Class": {
+		"prefix": "queueable",
+		"body": [
+			"public class ${1:QueueableClass} implements System.Queueable {",
+			"  public void execute(System.QueueableContext context) {",
+			"    ${2:// queueable logic}",
+			"  }",
+			"}"
+		],
+		"description": "Queueable Apex class skeleton"
 	}
 }
