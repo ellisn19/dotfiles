@@ -1,26 +1,26 @@
 {
-	"Log": {
-		"prefix": "console.log",
+	"Log variable": {
+		"prefix": "js:log:variable",
 		"body": ["console.log(${1:variable});"],
 		"description": "Log a variable"
 	},
 	"Log variable with label": {
-		"prefix": "console.log",
+		"prefix": "js:log:label",
 		"body": ["console.log('${1:variable}: ' + ${1:variable});"],
 		"description": "Log a variable with its name and value"
 	},
 	"Log variable with JSON.stringify": {
-		"prefix": "console.log",
+		"prefix": "js:log:stringify",
 		"body": ["console.log('${1:variable}: ' + JSON.stringify(${1:variable}));"],
 		"description": "Log a variable with its name and value using JSON.stringify"
 	},
 	"Log object with expandable tree": {
-		"prefix": "console.dir",
+		"prefix": "js:log:dir",
 		"body": ["console.dir(${1:variable});"],
 		"description": "Log an object with expandable tree"
 	},
 	"Time a block": {
-		"prefix": "timeblock",
+		"prefix": "js:log:time",
 		"body": [
 			"console.time('${1:label}');",
 			"${2:// code to measure}",
@@ -29,12 +29,12 @@
 		"description": "Time a block of code"
 	},
 	"Arrow function": {
-		"prefix": "arrowfn",
+		"prefix": "js:fn:arrow",
 		"body": ["const ${1:fnName} = (${2:params}) => {", "  ${3:// body}", "};"],
 		"description": "Arrow function"
 	},
 	"Try Catch Block": {
-		"prefix": "trycatch",
+		"prefix": "js:error:trycatch",
 		"body": [
 			"try {",
 			"  ${1:// code to try}",
