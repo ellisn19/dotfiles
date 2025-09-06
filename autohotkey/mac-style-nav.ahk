@@ -1,5 +1,10 @@
-; --- Remap physical Left Alt to act like Ctrl for all key combos (e.g., copy/paste) ---
+; --- Disable Capslock ---
+CapsLock::Return
 
+; --- Select current word ---
+Shift & CapsLock::Send ^{Right}+^{Left}
+
+; --- Remap physical Left Alt to act like Ctrl for all key combos (e.g., copy/paste) ---
 LAlt::LCtrl
 LCtrl::LAlt
 
