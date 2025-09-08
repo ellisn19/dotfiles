@@ -1,8 +1,50 @@
 ; --- Disable Capslock ---
-CapsLock::Return
+~Capslock::SetCapsLockState, off
+
+; --- Line Navigation ---
+CapsLock & 4::Send {Home} ; Beginning of line
+CapsLock & 0::Send {End} ; End of line
 
 ; --- Select current word ---
-Shift & CapsLock::Send ^{Right}+^{Left}
+; Shift & CapsLock::Send ^{Right}+^{Left}
+
+; Vim-style navigation with LCtrl (physical Alt) + HJKL
+CapsLock & h::
+    if GetKeyState("Shift", "P")
+        Send +{Left}
+    else
+        Send {Left}
+return
+
+CapsLock & j::
+    if GetKeyState("Shift", "P")
+        Send +{Down}
+    else
+        Send {Down}
+return
+
+CapsLock & k::
+    if GetKeyState("Shift", "P")
+        Send +{Up}
+    else
+        Send {Up}
+return
+
+CapsLock & l::
+    if GetKeyState("Shift", "P")
+        Send +{Right}
+    else
+        Send {Right}
+return
+
+; Open new line above/below (O, o)
+CapsLock & o::
+    if ("Shift", "P") {
+        Send {Home}{Enter}{Up}     ; O - new line above
+    } else {
+        Send {End}{Enter}          ; o - new line below
+    }
+return
 
 ; --- Remap physical Left Alt to act like Ctrl for all key combos (e.g., copy/paste) ---
 LAlt::LCtrl
